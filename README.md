@@ -40,7 +40,7 @@ for Maven projects:
 
 
 # About
-Uielements-autohealer (Copyright © 2025) is a project created and maintained by Alok Patel and licensed under the terms of the [Apache 2.0 License.](https://www.apache.org/licenses/LICENSE-2.0).
+Uielements-autohealer (Copyright © 2025) is a project created and maintained by [Alok Patel](https://github.com/alokpaatel) and licensed under the terms of the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
            
 
   
