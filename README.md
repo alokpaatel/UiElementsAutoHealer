@@ -3,7 +3,7 @@ A smart XPath locator machanism to locate any UI element to adapt to AUT changes
 
 # How to start
 
-# 0.1 Add dependency
+# 1. Add dependency
 
 for Maven projects:
 
@@ -12,3 +12,10 @@ for Maven projects:
             <artifactId>uielements-autoHealer</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+# 2. Init driver instance of Auto Healing object
+
+        //create driver instance
+        WebDriver driver = new ChromeDriver();
+        //create auto-healing object
+        IUIElements uiElements = new UIElements(driver);
