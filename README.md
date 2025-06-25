@@ -37,6 +37,10 @@ for Maven projects:
            uiElements.getWebBtnLocator("Submit").click();
            
   Autohealer will locate element by creating dynamic xpath in run-time based on Element name.
+
+
+#About
+uielements-autohealer (Copyright © 2025) is a project created and maintained by  Alok Patel and licensed under the terms of the https://www.apache.org/licenses/LICENSE-2.0.
            
 
   
