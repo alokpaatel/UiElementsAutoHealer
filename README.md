@@ -20,7 +20,7 @@ for Maven projects:
         //create auto-healing object
         IUIElements uiElements = new UIElements(driver);
 
-# 3. Apply auto-healing methods to get automated XPath locator with element name
+# 3. Apply auto-healing methods to get automated XPath locator
 
             uiElements.getTextBoxLocator("Textbox field Name").sendKeys("Test");
             uiElements.getWebBtnLocator("Button Name").click();
