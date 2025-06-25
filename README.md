@@ -26,7 +26,14 @@ for Maven projects:
             uiElements.getWebBtnLocator("Button Name").click();
             uiElements.getCheckboxLocator("Checkbox Name").click();
 
-  ###Note: You need to provide only element name inside methods. No need to create any Xpath.
+  ###Note: You need to provide only element name inside methods. No need to create Xpath manually.
+  Example: If you want to click on 'Submit' button then you need to write below code:
+  
+           uiElements.getWebBtnLocator("Submit").click();
+           
+  Autohealer will locate element by creating automatic locator in run-time each time based on Element name.
+           
+
   
 
 
