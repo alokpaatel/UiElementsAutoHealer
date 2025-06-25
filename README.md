@@ -19,3 +19,12 @@ for Maven projects:
         WebDriver driver = new ChromeDriver();
         //create auto-healing object
         IUIElements uiElements = new UIElements(driver);
+
+# 3. Apply auto-healing methods to get automated XPath locator with element name
+
+            uiElements.getTextBoxLocator("Textbox field Name").sendKeys("Test");
+            uiElements.getWebBtnLocator("Button Name").click();
+            uiElements.getCheckboxLocator("Checkbox Name").click();
+
+
+
