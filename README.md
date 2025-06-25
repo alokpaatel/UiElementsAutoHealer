@@ -20,11 +20,14 @@ for Maven projects:
         //create auto-healing object
         IUIElements uiElements = new UIElements(driver);
 
-## 3. Apply auto-healing methods to get automated XPath locator
+## 3. Call auto-healing methods to get automated XPath locator
 
             uiElements.getTextBoxLocator("Textbox field Name").sendKeys("Test");
             uiElements.getWebBtnLocator("Button Name").click();
             uiElements.getCheckboxLocator("Checkbox Name").click();
+
+  ###Note: You need to provide only element name inside methods. No need to create any Xpath.
+  
 
 
 
