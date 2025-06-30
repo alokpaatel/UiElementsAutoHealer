@@ -1,4 +1,4 @@
-package com.github.UiElementAutoHealer;
+package UiElementAutoHealer;
 
 public class GetElementLoc {
 

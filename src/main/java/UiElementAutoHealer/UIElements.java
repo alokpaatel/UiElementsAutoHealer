@@ -1,4 +1,4 @@
-package com.github.UiElementAutoHealer;
+package UiElementAutoHealer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

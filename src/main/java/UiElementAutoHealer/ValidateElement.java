@@ -1,4 +1,4 @@
-package com.github.UiElementAutoHealer;
+package UiElementAutoHealer;
 
 import org.apache.commons.text.WordUtils;
 import org.openqa.selenium.*;
@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
 
-import static com.github.UiElementAutoHealer.UIElements.driver;
+import static UiElementAutoHealer.UIElements.driver;
 
 
 public class ValidateElement extends GetElementLoc {
@@ -179,15 +179,15 @@ public class ValidateElement extends GetElementLoc {
                 if (frameElement == null) {
                     List<WebElement> framesList = driver.findElements(By.tagName("frame"));
                     framesList.addAll(driver.findElements(By.tagName("iframe")));
-                    if (framesList.size() > 0) {
+                    if (!framesList.isEmpty()) {
                         shiftAndGetElementInFrame(xpath);
-                        if (frameElement != null && driver.findElements(By.xpath(xpath)).size() > 0) {
+                        if (frameElement != null && !driver.findElements(By.xpath(xpath)).isEmpty()) {
                             break;
                         }
                     }
                     driver.switchTo().parentFrame();
                 } else {
-                    if (driver.findElements(By.xpath(xpath)).size() > 0) {
+                    if (!driver.findElements(By.xpath(xpath)).isEmpty()) {
                         break;
                     } else {
                         driver.switchTo().parentFrame();
@@ -283,10 +283,8 @@ public class ValidateElement extends GetElementLoc {
 
         columns.get(colNum).click();
         //columns.get(colNum).sendKeys("H");
-        //((JavascriptExecutor) driver).executeScript("arguments[0].value='"+fieldVal+"'", columns.get(colNum));
 
         Actions actions = new Actions(driver);
-        //actions.sendKeys(Keys.chord(Keys.LEFT_CONTROL, "v")).build().perform();
         actions.sendKeys(fieldVal).build().perform();
 
     }
@@ -328,8 +326,8 @@ public class ValidateElement extends GetElementLoc {
         jsWait = new WebDriverWait(jsWaitDriver, Duration.ofSeconds(10));
         jsExec = (JavascriptExecutor) jsWaitDriver;
         try {
-            ExpectedCondition<Boolean> jQueryLoad = jsWaitDriver -> ((Long) ((JavascriptExecutor) driver)
-                    .executeScript("return jQuery.active") == 0);
+            ExpectedCondition<Boolean> jQueryLoad = jsWaitDriver -> (Boolean) ((Long) ((JavascriptExecutor) driver)
+                                .executeScript("return jQuery.active") == 0);
             boolean jqueryReady = (Boolean) jsExec.executeScript("return jQuery.active==0");
             if (!jqueryReady) {
                 jsWait.until(jQueryLoad);
@@ -348,7 +346,7 @@ public class ValidateElement extends GetElementLoc {
         jsWait = new WebDriverWait(jsWaitDriver, Duration.ofSeconds(10));
         jsExec = (JavascriptExecutor) jsWaitDriver;
         try {
-            ExpectedCondition<Boolean> jsLoad = jsWaitDriver -> ((JavascriptExecutor) driver)
+            ExpectedCondition<Boolean> jsLoad = jsWaitDriver -> (Boolean) ((JavascriptExecutor) driver)
                     .executeScript("return document.readyState").toString().equals("complete");
             boolean jsReady = jsExec.executeScript("return document.readyState").toString().equals("complete");
             if (!jsReady) {
@@ -537,7 +535,7 @@ public class ValidateElement extends GetElementLoc {
         jsExec = (JavascriptExecutor) jsWaitDriver;
         ExpectedCondition<Boolean> angularLoad = driver -> {
             int loadingElements = driver.findElements(by).size();
-            return loadingElements >= expected;
+            return (Boolean) (loadingElements >= expected);
         };
         jsWait.until(angularLoad);
     }
@@ -548,7 +546,7 @@ public class ValidateElement extends GetElementLoc {
         jsExec = (JavascriptExecutor) jsWaitDriver;
         ExpectedCondition<Boolean> angularLoad = driver -> {
             int loadingElements = driver.findElements(By.cssSelector(css)).size();
-            return loadingElements == 0;
+            return (Boolean) (loadingElements == 0);
         };
         jsWait.until(angularLoad);
     }
