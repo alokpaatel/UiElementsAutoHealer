@@ -35,68 +35,6 @@ public class ValidateElement extends GetElementLoc {
         waitUntilAngular5Ready();
     }
 
-    public static String validateXpath(String caseXpath, String childTag) {
-        String elementLocator;
-        String containsCondition = "contains(@type, 'submit') or contains(@type, 'checkbox') or contains(@type, 'radio') or contains(@type, 'hidden') or contains(@style, 'none')";
-        childTag = getTagName(caseXpath, childTag);
-
-        elementLocator = caseXpath + "/"+childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "[not(" + containsCondition + ")]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/following::"+ childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/../following-sibling::" + childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/following-sibling::" + childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/preceding::" + childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/preceding-sibling::" + childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        elementLocator = caseXpath + "/../preceding-sibling::" + childTag + "[not(" + containsCondition + ")][1]";
-        if (verifyTagName(elementLocator, childTag)) {
-            return elementLocator;
-        }
-
-        return elementLocator;
-    }
-
-    public static boolean verifyCheckRadioElements(String elementLocator, String field){
-        try {
-            if (!driver.findElements(By.xpath(elementLocator)).isEmpty()) {
-                String fieldName = Objects.requireNonNull(driver.findElement(By.xpath(elementLocator)).getAccessibleName()).trim();
-                //String fieldName = driver.findElement(By.xpath(elementLocator)).getText().trim();
-                if (fieldName.equalsIgnoreCase(field.trim())) {
-                    //return true;
-                }
-                return true;
-            }
-        }catch(Exception _){}
-        return false;
-    }
-
     public static boolean verifyTagName(String elementLocator, String childTag){
         String tagName1 = "";
         try {
@@ -149,6 +87,33 @@ public class ValidateElement extends GetElementLoc {
         } catch (Exception e) {
         }
         return element;
+    }
+
+    public static String validateXpath(String caseXpath, String childTag) {
+        String elementLocator;
+        String containsCondition = "contains(@type, 'submit') or contains(@type, 'checkbox')";
+        childTag = getTagName(caseXpath, childTag);
+
+        elementLocator = caseXpath + "/"+childTag + "[not(" + containsCondition + ")][1]";
+        if (verifyTagName(elementLocator, childTag)) {
+            return elementLocator;
+        }
+
+        return elementLocator;
+    }
+
+    public static boolean verifyCheckRadioElements(String elementLocator, String field){
+        try {
+            if (!driver.findElements(By.xpath(elementLocator)).isEmpty()) {
+                String fieldName = Objects.requireNonNull(driver.findElement(By.xpath(elementLocator)).getAccessibleName()).trim();
+                //String fieldName = driver.findElement(By.xpath(elementLocator)).getText().trim();
+                if (fieldName.equalsIgnoreCase(field.trim())) {
+                    //return true;
+                }
+                return true;
+            }
+        }catch(Exception _){}
+        return false;
     }
 
     public static WebElement shiftAndGetElement(String xpath) {
@@ -384,6 +349,34 @@ public class ValidateElement extends GetElementLoc {
             }
         } catch (WebDriverException ignored) {
         }
+    }
+
+    public static boolean verifyCheckElements(String elementLocator, String field){
+        try {
+            if (!driver.findElements(By.xpath(elementLocator)).isEmpty()) {
+                String fieldName = Objects.requireNonNull(driver.findElement(By.xpath(elementLocator)).getAccessibleName()).trim();
+                //String fieldName = driver.findElement(By.xpath(elementLocator)).getText().trim();
+                if (fieldName.equalsIgnoreCase(field.trim())) {
+                    //return true;
+                }
+                return true;
+            }
+        }catch(Exception _){}
+        return false;
+    }
+
+    public static boolean verifyRadioElements(String elementLocator, String field){
+        try {
+            if (!driver.findElements(By.xpath(elementLocator)).isEmpty()) {
+                String fieldName = Objects.requireNonNull(driver.findElement(By.xpath(elementLocator)).getAccessibleName()).trim();
+                //String fieldName = driver.findElement(By.xpath(elementLocator)).getText().trim();
+                if (fieldName.equalsIgnoreCase(field.trim())) {
+                    //return true;
+                }
+                return true;
+            }
+        }catch(Exception _){}
+        return false;
     }
 
     public static void waitUntilAngular5Ready() {
