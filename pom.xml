@@ -139,8 +139,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven-compiler-plugin.version}</version>
             <configuration>
-                <source>${java.version}</source>
-                <target>${java.version}</target>
+                <source>23</source>
+                <target>23</target>
+                <compilerArgs>--enable-preview</compilerArgs>
             </configuration>
         </plugin>
     </plugins>
