@@ -1,7 +1,13 @@
 
 package io.github.autohealer;
 
-import java.awt.Toolkit;
+import org.apache.commons.text.WordUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.StringSelection;
@@ -9,25 +15,14 @@ import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import org.apache.commons.text.WordUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ValidateElement extends GetElementLoc {
+public class GetElements {
     public static boolean a;
     public static WebElement b;
     private static WebDriver e;
     private static WebDriverWait f;
     private static JavascriptExecutor g;
     public static String c;
-    static GetElements getElements = new GetElements();
 
     public static void a() {
         g();
@@ -58,7 +53,6 @@ public class ValidateElement extends GetElementLoc {
 
     public static String c(String var0, String var1) {
         String var3 = "";
-        getElements.d(var0);
 
         for(int var4 = 1; var4 <= 20; ++var4) {
             String var2 = var0 + "/following::*[" + var4 + "]";
