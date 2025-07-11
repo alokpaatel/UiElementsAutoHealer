@@ -9,8 +9,8 @@ for Maven projects:
 
         <dependency>
             <groupId>io.github.alokpaatel</groupId>
-            <artifactId>uielements-autoHealer</artifactId>
-            <version>1.5.0</version>
+            <artifactId>uihealerpro</artifactId>
+            <version>1.6.0</version>
         </dependency>
 
 ## 2. Init driver instance of Auto Healing object
