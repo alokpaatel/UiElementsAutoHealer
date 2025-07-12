@@ -1,4 +1,4 @@
-# UIElementsAutoHealer
+# UiElementsAutoHealer
 A smart XPath locator machanism to locate UI elements to adapt to AUT changes (Auto/Self healing) by generating element locators in run-time dynamically and automate test cases without creating manual XPath/CSS locators (Object Repository) for selenium based projects. One approach for reducing test maintainance and assocaited costs and ensure a higher success rate in test automation.
 
 # How to start
