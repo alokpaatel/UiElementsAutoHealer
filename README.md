@@ -9,7 +9,7 @@ for Maven projects:
 
         <dependency>
             <groupId>io.github.alokpaatel</groupId>
-            <artifactId>uihealerpro</artifactId>
+            <artifactId>uielements-autohealer</artifactId>
             <version>1.6.0</version>
         </dependency>
 
