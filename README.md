@@ -1,4 +1,4 @@
-# UIHealerPro
+# UIElementsAutoHealer
 A smart XPath locator machanism to locate UI elements to adapt to AUT changes (Auto/Self healing) by generating element locators in run-time dynamically and automate test cases without creating manual XPath/CSS locators (Object Repository) for selenium based projects. One approach for reducing test maintainance and assocaited costs and ensure a higher success rate in test automation.
 
 # How to start
@@ -39,7 +39,7 @@ for Maven projects:
 
 
 # About
-UIHealerPro (Copyright © 2025) is a project created and maintained by [Alok Patel](https://github.com/alokpaatel) and licensed under the terms of the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+UIElementsAutoHealer (Copyright © 2025) is a project created and maintained by [Alok Patel](https://github.com/alokpaatel) and licensed under the terms of the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
            
 
   
